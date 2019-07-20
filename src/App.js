@@ -23,14 +23,14 @@ class App extends Component{
           localStorage.setItem('user_id', res.user.id)   
         }
       })
-      .then(console.log(localStorage.token))
-
+      .then(console.log("Your token:", localStorage.token))
+      .then(e.target.reset())
     }
   }
 
   handleCreate = (e) => {
     e.preventDefault()
-    console.log(e)
+    // console.log(e)
     if(e.target.createusername.value && e.target.createpassword.value && e.target.createemail.value) {
       fetch('http://localhost:3000/api/v1/users', {
         method: 'POST',
@@ -49,7 +49,7 @@ class App extends Component{
         }
       })  
       .then(console.log("Your token:", localStorage.token))
-
+      .then(e.target.reset())
     }
   }
 
