@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Profile from './components/Profile';
 import Search from './components/Search';
+import TrailsConditions from './components/TrailsConditions';
 import Navigation from './components/Navigation'
 import Createform from './components/Createform';
 import store from './store'
@@ -26,12 +27,13 @@ class App extends Component{
 
   render() {
     return (
-      <Provider store={store}>
+      <Provider store={store} >
           <Navigation />    
             <Switch>
               <Route exact path="/" render = {() => (this.props.loggedIn ? <Redirect to='/profile'/> : <Createform /> )}/>
               <Route exact path="/profile" render = {() => (this.props.loggedIn ? <Profile/> : <Redirect to='/'/>)}/>
               <Route exact path="/search" render = {() => (this.props.loggedIn ? <Search/> : <Redirect to='/'/>)}/>
+              <Route exact path="/trailsconditions" render = {() => (this.props.loggedIn ? <TrailsConditions/> : <Redirect to='/profile'/>)}/>
             </Switch>
       </Provider>
     );

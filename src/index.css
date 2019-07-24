@@ -18,3 +18,9 @@ code {
   height:500px
 }
 
+.conditions-map {
+  width: 100%;
+  max-width:90%; 
+  height:90%;
+}
+

@@ -47,13 +47,18 @@ class Navigation extends Component {
               width: 60,
               borderWidth: 1,
             }}
-            />
-          <Navbar.Brand href="#home">SHRED</Navbar.Brand>
+          />
+          <Navbar.Brand href="/">SHRED</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto"></Nav>
               {(this.props.user ? 
+              <div>
+                <Navbar.Brand href="/search"> Search trails</Navbar.Brand>
+                <Navbar.Brand href="/trailsconditions"> Trail conditions</Navbar.Brand>
+                <Navbar.Brand href="/search">Edit profile</Navbar.Brand>
                 <Button className="logoutButton" variant="primary" onClick={() => this.props.dispatch({type: 'LOGOUT_ACTION'})}>LOGOUT</Button>
+              </div>
               :
               <Form inline onSubmit={(e) => this.handleLogin(e)}>
                 <Form.Group controlId="formLogin">
