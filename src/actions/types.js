@@ -1,0 +1,4 @@
+
+export const PROFILE_ACTION = "PROFILE_ACTION"
+export const SEARCH_ACTION = "SEARCH_ACTION"
+export const LOGOUT_ACTION = "LOGOUT_ACTION"
