@@ -7,8 +7,8 @@ class Profile extends Component {
 
   render() {
     return(
-      <div>
-        <h1>{this.props.user.currentUser.username}'s profile
+      <div >
+        <h1>
           {console.log(this.props.user.currentUser)}
         </h1> 
 
@@ -16,10 +16,9 @@ class Profile extends Component {
           <Card>
             <Card.Img variant="top" src="holder.js/100px160" />
             <Card.Body>
-              <Card.Title>Card title that wraps to a new line</Card.Title>
+              <Card.Title>{this.props.user.currentUser.username}'s profile</Card.Title>
               <Card.Text>
-                This is a longer card with supporting text below as a natural lead-in to
-                additional content. This content is a little bit longer.
+              {this.props.user.currentUser.location}
               </Card.Text>
             </Card.Body>
           </Card>

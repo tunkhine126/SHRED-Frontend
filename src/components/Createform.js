@@ -6,6 +6,8 @@ import Card from 'react-bootstrap/Card';
 
 class Createform extends Component {
 
+  image = require('../images/splash_page.jpg')
+  
   handleCreate = (e) => {
     e.preventDefault()
     // console.log(e)
@@ -37,28 +39,30 @@ class Createform extends Component {
 
   render() {
     return(
-            <Card style={{ width: '18rem' }}>
-        <Card.Body>
-          <Card.Title>CREATE USER</Card.Title>
-          <Form onSubmit={(e) => this.handleCreate(e)}>
-            <Form.Group controlId="formCreateBasicUsername">
-              <Form.Label>Username</Form.Label>
-              <Form.Control name="createusername" type="username" placeholder="Enter username" />
-            </Form.Group>
-            <Form.Group controlId="formCreateBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control name="createpassword" type="password" placeholder="Password" />
-            </Form.Group>
-            <Form.Group controlId="formCreateBasicEmail">
-              <Form.Label>Email</Form.Label>
-              <Form.Control name="createemail" type="text" placeholder="Email" />
-            </Form.Group>
-            <Button className="createButton" variant="primary" type="submit" >
-              Submit
-            </Button>
-          </Form>
-        </Card.Body>
+      <div>
+        <Card style={{ width: '18rem' }}>
+          <Card.Body>
+            <Card.Title>CREATE USER</Card.Title>
+            <Form onSubmit={(e) => this.handleCreate(e)}>
+              <Form.Group controlId="formCreateBasicUsername">
+                <Form.Label>Username</Form.Label>
+                <Form.Control name="createusername" type="username" placeholder="Enter username" />
+              </Form.Group>
+              <Form.Group controlId="formCreateBasicPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control name="createpassword" type="password" placeholder="Password" />
+              </Form.Group>
+              <Form.Group controlId="formCreateBasicEmail">
+                <Form.Label>Email</Form.Label>
+                <Form.Control name="createemail" type="text" placeholder="Email" />
+              </Form.Group>
+              <Button className="createButton" variant="primary" type="submit" >
+                Submit
+              </Button>
+            </Form>
+          </Card.Body>
       </Card>
+    </div>
     )
   }
 }
