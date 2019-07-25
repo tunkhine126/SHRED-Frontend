@@ -13,8 +13,8 @@ export default function reducer(state = initialState, action) {
       return {...state, currentUser: action.user, loggedIn: true}
     case LOGOUT_ACTION : 
     localStorage.removeItem('token', 'user_id')
-    console.log(initialState)
-      return initialState
+  //  console.log(initialState) 
+      return {...state, loggedIn: false}
     default: 
       return state;
   }
