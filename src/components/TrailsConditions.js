@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Iframe from 'react-iframe'
+import TrailsDiv from '../components/TrailsDiv';
 
 class Search extends Component {
 
   render() {
     return(
-      <div>
+      <TrailsDiv>
         <h1>TRAIL CONDITIONS</h1> 
         <Iframe 
+          title="trailsConditionsFrame" 
           classname="conditions-map" 
           frameborder="0" 
           scrolling="yes" 
-          src="https://www.mtbproject.com/widget/conditions?v=3&x=-9393453&y=4000267&z=5&height=400">
+          src="https://www.mtbproject.com/widget/conditions?favs=1&location=v=3&x=-9393453&y=4000267&z=5&height=400">
         </Iframe>
-      </div>
+      </TrailsDiv>
     )
   }
 }

@@ -6,15 +6,17 @@ class userRideCard extends Component {
 
   render() {
     return (
+      <div>
         <Card>
             <Card.Img variant="top" src="holder.js/100px160" />
             <Card.Body>
-              <Card.Title>User Ride Card</Card.Title>
+            <h4><Card.Header>Ride Card</Card.Header></h4>
               <Card.Text>
               User Ride Details
               </Card.Text>
             </Card.Body>
         </Card>
+      </div>  
     )
   }
 }

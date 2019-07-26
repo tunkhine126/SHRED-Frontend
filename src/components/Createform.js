@@ -5,8 +5,6 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 class Createform extends Component {
-
-  image = require('../images/splash_page.jpg')
   
   handleCreate = (e) => {
     e.preventDefault()
@@ -40,7 +38,7 @@ class Createform extends Component {
   render() {
     return(
       <div>
-        <Card style={{ width: '18rem' }}>
+        <Card style={{ width: '18rem' }} >
           <Card.Body>
             <Card.Title>CREATE USER</Card.Title>
             <Form onSubmit={(e) => this.handleCreate(e)}>
