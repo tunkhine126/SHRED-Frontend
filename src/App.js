@@ -7,6 +7,7 @@ import Search from './components/Search';
 import TrailsConditions from './components/TrailsConditions';
 import Navigation from './components/Navigation'
 import Createform from './components/Createform';
+import AppDiv from './components/AppDiv';
 
 class App extends Component{
 
@@ -26,7 +27,8 @@ class App extends Component{
   render() {
     return (
       <div>
-          <Navigation />    
+        <AppDiv>
+          <Navigation />  
           {
             localStorage.token && !this.props.user_id ? null :
               <Switch>
@@ -36,6 +38,7 @@ class App extends Component{
                 <Route exact path="/trailsconditions" render = {() => (this.props.loggedIn ? <TrailsConditions/> : <Redirect to='/profile'/>)}/>
               </Switch>
           }
+          </AppDiv>
         </div>
     );
   }
@@ -44,7 +47,7 @@ class App extends Component{
 
 const mapStateToProps = state => ({
   loggedIn: state.userReducer.loggedIn,
-  user_id: state.userReducer.currentUser.id
+  user_id: state.userReducer.currentUser.id 
  })
 
  export default connect(mapStateToProps)(App);
