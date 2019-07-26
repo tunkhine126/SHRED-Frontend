@@ -7,6 +7,7 @@ import CardColumns from 'react-bootstrap/CardColumns';
 import UserCard from './UserComponents/userCard';
 import UserRideCard from './UserComponents/userRideCard';
 import UserSavedRideCard from './UserComponents/userSavedRideCard';
+import UserBikeCard from './UserComponents/userBikeCard';
 import ProfileDiv from '../components/ProfileDiv';
 
 class Profile extends Component { 
@@ -15,10 +16,12 @@ class Profile extends Component {
     return(
       <ProfileDiv>
         <CardColumns>
-            <UserCard /> 
-            <UserRideCard /> 
-            <UserSavedRideCard /> 
+          <UserCard /> 
+          <UserBikeCard />
         </CardColumns>
+          <UserRideCard /> <br/>
+          <UserSavedRideCard /> 
+
       </ProfileDiv>
     )
   }

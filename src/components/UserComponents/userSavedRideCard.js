@@ -7,7 +7,7 @@ class userSavedRideCard extends Component {
   render() {
     return (
       <div>
-        <Card>
+        <Card style={{ width: '30rem' }}>
             <Card.Img variant="top" src="holder.js/100px160" />
             <Card.Body>
             <h4><Card.Header>Saved Rides</Card.Header></h4>
