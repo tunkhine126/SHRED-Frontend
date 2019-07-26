@@ -8,10 +8,10 @@ class Search extends Component {
   render() {
     return(
       <TrailsDiv>
-        <h1>TRAIL CONDITIONS</h1> 
+        <h1>TRAIL CONDITIONS NEAR YOU</h1> 
         <Iframe 
-          title="trailsConditionsFrame" 
-          classname="conditions-map" 
+          align="center"
+          className="conditions-map" 
           frameborder="0" 
           scrolling="yes" 
           src="https://www.mtbproject.com/widget/conditions?favs=1&location=v=3&x=-9393453&y=4000267&z=5&height=400">

@@ -13,14 +13,31 @@ code {
 }
 
 .trails-map {
+  box-align: center;
   width:100%; 
   max-width:1200px; 
   height:500px
 }
 
 .conditions-map {
-  width: 100%;
-  max-width:90%; 
-  height:90%;
+  box-align: center;
+  position: absolute; 
+  width: 978px; 
+  height: 398px;
 }
 
+.bikeimage {
+  display: block;
+  max-width:400px;
+  max-height:250px;
+  width: auto;
+  height: auto;
+}
+
+.garage {
+  text-align: center;
+}
+
+.searchDiv{
+  box-align: center;
+}
