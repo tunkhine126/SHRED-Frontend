@@ -7,10 +7,9 @@ class Search extends Component {
 
   render() {
     return(
-      <SearchDiv className="searchDiv">
-        <h1>SEARCH PAGE</h1> 
+      <SearchDiv>
+        <h1 className="searchText">SEARCH TRAILS</h1> 
         <Iframe 
-          title="searchFrame" 
           align="center"
           className = "trails-map"
           frameborder="0" 
