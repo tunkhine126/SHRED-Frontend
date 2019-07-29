@@ -5,18 +5,19 @@ import { Card } from 'react-bootstrap';
 class userRideCard extends Component {
 
   render() {
+    console.log(this.props.user.currentUser)
     return (
       <div className="rideCard">
         <h2>Shreds</h2>
-        <Card style={{ width: '30rem' }}>
+        {this.props.user.currentUser.rides.map(ride => 
+        <Card key={ride.id} style={{ width: '30rem' }}>
             <Card.Img variant="top" src="holder.js/100px160" />
             <Card.Body>
-            <h4><Card.Header>Some Ride Card</Card.Header></h4>
-              <Card.Text>
-              User Ride Details
-              </Card.Text>
+            <h4><Card.Header>Ride {ride.id}</Card.Header></h4>
+              <Card.Text>{ride.date}</Card.Text>
+              <Card.Text>{ride.description}</Card.Text>
             </Card.Body>
-        </Card>
+        </Card>)}
       </div>  
     )
   }

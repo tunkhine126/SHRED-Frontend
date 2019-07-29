@@ -9,13 +9,13 @@ class TrailsConditions extends Component {
     return(
       <TrailsDiv>
         <h1 className="searchText">TRAIL CONDITIONS NEAR YOU</h1> 
-        <Iframe 
-          align="center"
-          className="conditions-map" 
-          frameborder="0" 
-          scrolling="yes" 
-          src="https://www.mtbproject.com/widget/conditions?favs=1&location=v=3&x=-9393453&y=4000267&z=5&height=400">
-        </Iframe>
+          <Iframe 
+            align="center"
+            className="conditions-map" 
+            frameborder="0" 
+            scrolling="yes" 
+            src="https://www.mtbproject.com/widget/conditions?favs=1&location=v=3&x=-9393453&y=4000267&z=5&height=400">
+          </Iframe>
       </TrailsDiv>
     )
   }

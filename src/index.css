@@ -22,7 +22,7 @@ code {
 .conditions-map {
   margin: auto;
   width:100%;
-  width: 978px; 
+  max-width: 978px; 
   height: 398px;
 }
 
@@ -31,6 +31,16 @@ code {
   margin-right: auto;
   display: block;
   max-width:400px;
+  max-height:250px;
+  width: auto;
+  height: auto;
+}
+
+.userimage {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  max-width:250px;
   max-height:250px;
   width: auto;
   height: auto;
@@ -63,16 +73,30 @@ code {
   text-align: center;
 }
 
+.searchTrailsForm {
+  margin: auto;
+}
+
+.searchTrailButton {
+  margin: auto;
+}
 .navigation {
-  color: #212121;
+  color: black;
+}
+.navText {
+  color: white;
 }
 
 .brand {
   color: white
 }
 
-.loginButton {
-  color: #e91e63
+.button {
+  background-color: #e91e63;
+  color: white;
+  border-radius: 2px;
+  border: 2px solid  #e91e63;
+  box-shadow: 0 8px 16px 0 rgba(230, 53, 53, 0.043), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .logoutButton {

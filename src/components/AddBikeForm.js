@@ -37,7 +37,7 @@ class AddBikeForm extends Component {
 
   render() {
     return(
-        <Card style={{ width: '18rem' }} className="addBikeForm">
+        <Card style={{ width: '18rem' }} className="addBikeForm" bg="dark" text="white">
           <Card.Body>
             <Form onSubmit={(e) => this.handleAddBike(e)}>
               <Form.Group controlId="addBikeForm">
