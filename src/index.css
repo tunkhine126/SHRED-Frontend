@@ -13,20 +13,22 @@ code {
 }
 
 .trails-map {
-  box-align: center;
+  margin: auto;
   width:100%; 
   max-width:1200px; 
   height:500px
 }
 
 .conditions-map {
-  box-align: center;
-  position: absolute; 
+  margin: auto;
+  width:100%;
   width: 978px; 
   height: 398px;
 }
 
 .bikeimage {
+  margin-left: auto;
+  margin-right: auto;
   display: block;
   max-width:400px;
   max-height:250px;
@@ -34,10 +36,45 @@ code {
   height: auto;
 }
 
-.garage {
+.userCard {
+  text-align: center;
+  color: black
+}
+.garageCard {
+  text-align: center;
+  color: white
+}
+
+.addBikeForm {
+  text-align: center;
+  color: black
+}
+.rideCard {
+  text-align: center;
+  color: black
+}
+
+.savedRideCard {
+  text-align: center;
+  color: black
+}
+
+.searchText{
   text-align: center;
 }
 
-.searchDiv{
-  box-align: center;
+.navigation {
+  color: #212121;
+}
+
+.brand {
+  color: white
+}
+
+.loginButton {
+  color: #e91e63
+}
+
+.logoutButton {
+  color: #e91e63
 }

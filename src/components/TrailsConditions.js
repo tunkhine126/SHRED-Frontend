@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 import Iframe from 'react-iframe'
 import TrailsDiv from '../components/TrailsDiv';
 
-class Search extends Component {
+class TrailsConditions extends Component {
 
   render() {
     return(
       <TrailsDiv>
-        <h1>TRAIL CONDITIONS NEAR YOU</h1> 
+        <h1 className="searchText">TRAIL CONDITIONS NEAR YOU</h1> 
         <Iframe 
           align="center"
           className="conditions-map" 
@@ -25,4 +25,4 @@ const mapStateToProps = state => ({
   user: state.currentUser
  })
  
- export default connect(mapStateToProps)(Search);
+ export default connect(mapStateToProps)(TrailsConditions);

@@ -38,7 +38,7 @@ class Navigation extends Component {
   render() {
     return(
       <div>
-        <Navbar bg="light" expand="lg">
+        <Navbar bg="light" expand="lg" className="navigation">
           <img
             src={this.image} alt="logo" className='navLogo'
             style={{
@@ -56,8 +56,8 @@ class Navigation extends Component {
               <div>
                 <Navbar.Brand href="/search"> Search trails</Navbar.Brand>
                 <Navbar.Brand href="/trailsconditions"> Trail conditions</Navbar.Brand>
-                <Navbar.Brand href="/search">Edit profile</Navbar.Brand>
-                <Button className="logoutButton" variant="primary" onClick={() => this.props.dispatch({type: 'LOGOUT_ACTION'})}>LOGOUT</Button>
+                <Navbar.Brand href="/editUserForm">Edit profile</Navbar.Brand>
+                <Button className="logoutButton" onClick={() => this.props.dispatch({type: 'LOGOUT_ACTION'})}>LOGOUT</Button>
               </div>
               :
               <Form inline onSubmit={(e) => this.handleLogin(e)}>
@@ -69,7 +69,7 @@ class Navigation extends Component {
                   <Form.Label></Form.Label>
                     <Form.Control name="password" type="password" placeholder="Password" />
                 </Form.Group>
-                  <Button className="loginButton" variant="primary" type="submit">LOGIN</Button>
+                  <Button className="loginButton" type="submit">LOGIN</Button>
               </Form>)}
             </Navbar.Collapse>
           </Navbar>

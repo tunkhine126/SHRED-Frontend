@@ -6,11 +6,12 @@ class userRideCard extends Component {
 
   render() {
     return (
-      <div>
+      <div className="rideCard">
+        <h2>Shreds</h2>
         <Card style={{ width: '30rem' }}>
             <Card.Img variant="top" src="holder.js/100px160" />
             <Card.Body>
-            <h4><Card.Header>Ride Card</Card.Header></h4>
+            <h4><Card.Header>Some Ride Card</Card.Header></h4>
               <Card.Text>
               User Ride Details
               </Card.Text>

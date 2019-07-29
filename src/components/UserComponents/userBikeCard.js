@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Card, ListGroup  } from 'react-bootstrap';
+import AddBikeForm from '../AddBikeForm';
+import Popup from "reactjs-popup";
+import { Card, ListGroup, Button  } from 'react-bootstrap';
 
 class userBikeCard extends Component {
 
@@ -8,9 +10,14 @@ class userBikeCard extends Component {
     // console.log(this.props.user)
     return (
         <div>
-          <h2 className="garage">GARAGE:</h2>
+          <h2 className="garageCard">GARAGE 
+            <Popup trigger={<Button>+</Button>} position="right center" style={{ width: '18rem' }} closeOnDocumentClick>
+                <AddBikeForm/>
+            </Popup>
+          </h2> 
+          
           {this.props.user.bikes.map(bike => 
-            <Card key={bike.id}>
+            <Card key={bike.id} style={{ width: '20rem'}}>
             <Card.Img className="bikeimage" variant="bottom" src={bike.img_url} />
               <ListGroup>
                 Name: {bike.name}<br/>
