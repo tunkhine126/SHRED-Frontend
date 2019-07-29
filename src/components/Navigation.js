@@ -38,9 +38,9 @@ class Navigation extends Component {
   render() {
     return(
       <div>
-        <Navbar bg="light" expand="lg" className="navigation">
+        <Navbar bg="dark" variant="dark">
           <img
-            src={this.image} alt="logo" className='navLogo'
+            src={this.image} alt="logo"
             style={{
               alignSelf: 'center',
               height: 60,
@@ -56,8 +56,8 @@ class Navigation extends Component {
               <div>
                 <Navbar.Brand href="/search"> Search trails</Navbar.Brand>
                 <Navbar.Brand href="/trailsconditions"> Trail conditions</Navbar.Brand>
-                <Navbar.Brand href="/editUserForm">Edit profile</Navbar.Brand>
-                <Button className="logoutButton" onClick={() => this.props.dispatch({type: 'LOGOUT_ACTION'})}>LOGOUT</Button>
+                <Navbar.Brand href="/searchUsers">Search Users</Navbar.Brand>
+                <button className="button" onClick={() => this.props.dispatch({type: 'LOGOUT_ACTION'})}>LOGOUT</button>
               </div>
               :
               <Form inline onSubmit={(e) => this.handleLogin(e)}>

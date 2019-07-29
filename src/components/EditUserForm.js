@@ -8,36 +8,36 @@ class EditUserForm extends Component {
   
   handleEdit = (e) => {
     e.preventDefault()
-    console.log(e)
-    // if(e.target.createusername.value && e.target.createpassword.value && e.target.createemail.value) {
-    //   fetch('http://localhost:3000/api/v1/users', {
-    //     method: 'PATCH',
-    //     headers: {'Content-Type': 'application/json', Accepts: 'application/json','Access-Control-Allow-Origin':'*'},
-    //     body: JSON.stringify({user: {
-    //       location: e.target.location.value,
-    //       email: e.target.editemail.value,
-    //       image: e.target.editimage.value,
-    //       } 
-    //     })
-    //   })
-    //   .then(res => res.json())
-    //   .then( res => {
-    //     if(res.jwt) {
-    //       localStorage.setItem('token', res.jwt)
-    //       localStorage.setItem('user_id', res.user.id)   
-    //       this.props.dispatch({type: "LOGIN_USER", user: res.user})
-    //       window.history.pushState({url: "/profile"}, "", "/profile")
-    //       this.forceUpdate() 
-    //     }
-    //   })  
-    //   .then(console.log("Your token:", localStorage.token))
-    //   .then(e.target.reset())
-    // }
+    console.log(e.target)
+ 
+      fetch(`http://localhost:3000/api/v1/users/${this.props.user_id}`, {
+        method: 'PUT',
+        headers: {'Content-Type': 'application/json', Accepts: 'application/json','Access-Control-Allow-Origin':'*'},
+        body: JSON.stringify({user: {
+          location: e.target.location.value,
+          email: e.target.editemail.value,
+          image: e.target.editimage.value,
+          } 
+        })
+      })
+      .then(res => res.json())
+      .then( res => {
+        if(res.jwt) {
+          localStorage.setItem('token', res.jwt)
+          localStorage.setItem('user_id', res.user.id)   
+          this.props.dispatch({type: "LOGIN_USER", user: res.user})
+          window.history.pushState({url: "/profile"}, "", "/profile")
+          this.forceUpdate() 
+        }
+      })  
+      .then(console.log("Your token:", localStorage.token))
+      .then(e.target.reset())
+    
   }
 
   render() {
     return(
-        <Card style={{ width: '18rem' }} >
+        <Card style={{ width: '18rem' }} bg="dark" text="white">
           <Card.Body>
             <Card.Title>EDIT USER</Card.Title>
             <Form onSubmit={(e) => this.handleEdit(e)}>
@@ -64,7 +64,7 @@ class EditUserForm extends Component {
 }
 
 const mapStateToProps = state => ({
- user: state.userReducer.loggedIn
+ user: state.userReducer.loggedIn, user_id: state.userReducer.currentUser.id
 })
 
 export default connect(mapStateToProps)(EditUserForm);

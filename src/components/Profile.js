@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import CardDeck from 'react-bootstrap/CardDeck';
+import { CardDeck } from 'react-bootstrap';
 import UserCard from './UserComponents/userCard';
 import UserRideCard from './UserComponents/userRideCard';
 import UserSavedRideCard from './UserComponents/userSavedRideCard';
@@ -18,6 +18,7 @@ class Profile extends Component {
           <UserRideCard />
           <UserSavedRideCard /> 
         </CardDeck>
+        <br/>
         <CardDeck>
           <UserBikeCard />
         </CardDeck>
