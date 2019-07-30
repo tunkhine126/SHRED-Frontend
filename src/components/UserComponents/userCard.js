@@ -37,12 +37,11 @@ class userCard extends Component {
   }
 
   render() {
-    // console.log(this.props)
     return (
       <div>
       <h2 className="userCard">{this.props.user.username}'s Profile</h2>
         <Card style={{ width: '20rem' }} className="text-center">
-            <Col xs={6} md={4}>
+            <Col md="auto">
               <Image src={this.props.user.img_url} roundedCircle />
             </Col>
             <Card.Body> 
@@ -55,10 +54,15 @@ class userCard extends Component {
                 <Popup trigger={<button className="button"> Edit Profile</button> } position="right center" style={{ width: '18rem' }} closeOnDocumentClick>
                   <EditUserForm/>
                 </Popup>
-                <br/><br/><h4><Card.Header>Followers: {this.props.user.followers.length} </Card.Header></h4>
-              <ListGroup >
-                {this.props.user.follower_users.map(follower => <ListGroup.Item key={follower.id}>{follower.username}</ListGroup.Item>)}
-              </ListGroup>
+                <br/><br/>
+                  <Popup trigger={<button className="button"> Followers: {this.props.user.followers.length} </button> } 
+                    position="right center" 
+                    style={{ width: '18rem' }} 
+                    closeOnDocumentClick>
+                    <ListGroup >
+                      {this.props.user.follower_users.map(follower => <ListGroup.Item key={follower.id}>{follower.username}</ListGroup.Item>)}
+                    </ListGroup>
+                  </Popup>
             </Card.Body>
         </Card>
       </div>

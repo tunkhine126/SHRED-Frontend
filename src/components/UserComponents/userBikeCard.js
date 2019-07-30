@@ -7,17 +7,17 @@ import { Card, ListGroup, CardDeck } from 'react-bootstrap';
 class userBikeCard extends Component {
 
   render() {
-    console.log(this.props.user.bikes)
     return (
-        <div>
-          <h4 className="garageCard">GARAGE 
+      <div>
+        <div style={{ width: '80rem'}}>
+          <h3 className="garageCard">GARAGE 
             <Popup trigger={<button className="button">+</button>} position="right center" style={{ width: '18rem' }} closeOnDocumentClick>
                 <AddBikeForm/>
             </Popup>
-          </h4> 
+          </h3> 
           <CardDeck>
           {this.props.user.bikes.map(bike => 
-            <Card key={bike.id} style={{ width: '20rem'}}>
+            <Card key={bike.id} >
             <Card.Img className="bikeimage" variant="bottom" src={bike.img_url} />
               <ListGroup>
                 Name: {bike.name}<br/>
@@ -31,6 +31,7 @@ class userBikeCard extends Component {
             </Card>)}
           </CardDeck>
         </div>
+      </div>
     )
   }
 }

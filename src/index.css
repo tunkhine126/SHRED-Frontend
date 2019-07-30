@@ -52,7 +52,7 @@ code {
 }
 .garageCard {
   text-align: center;
-  color: white
+  color: black
 }
 
 .addBikeForm {
@@ -101,4 +101,19 @@ code {
 
 .logoutButton {
   color: #e91e63
+}
+
+.midCol {
+  overflow-y: hidden;
+  background: transparent
+}
+
+.rightCol {
+  overflow-y: hidden;
+  background: transparent
+}
+
+.splashHeader {
+  color: #e91e63;
+  text-align: center;
 }
