@@ -9,30 +9,28 @@ class AddBikeForm extends Component {
   handleAddBike = (e) => {
     e.preventDefault()
     console.log(e)
-    // if(e.target.createusername.value && e.target.createpassword.value && e.target.createemail.value) {
-    //   fetch('http://localhost:3000/api/v1/users', {
-    //     method: 'PATCH',
-    //     headers: {'Content-Type': 'application/json', Accepts: 'application/json','Access-Control-Allow-Origin':'*'},
-    //     body: JSON.stringify({user: {
-    //       location: e.target.location.value,
-    //       email: e.target.editemail.value,
-    //       image: e.target.editimage.value,
-    //       } 
-    //     })
-    //   })
-    //   .then(res => res.json())
-    //   .then( res => {
-    //     if(res.jwt) {
-    //       localStorage.setItem('token', res.jwt)
-    //       localStorage.setItem('user_id', res.user.id)   
-    //       this.props.dispatch({type: "LOGIN_USER", user: res.user})
-    //       window.history.pushState({url: "/profile"}, "", "/profile")
-    //       this.forceUpdate() 
-    //     }
-    //   })  
-    //   .then(console.log("Your token:", localStorage.token))
-    //   .then(e.target.reset())
-    // }
+      fetch('http://localhost:3000/bikes', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json', Accepts: 'application/json',Authorization: localStorage.token},
+        body: JSON.stringify({user: {
+          name: e.target.name.value,
+          img_url: e.target.image.value,
+          category: e.target.category.value,
+          framset: e.target.frameset.value,
+          groupset: e.target.groupset.value,
+          suspension: e.target.suspension.value,
+          wheelset: e.target.wheelset.value,
+          tires: e.target.tires.value,
+          } 
+        })
+      })
+      .then(res => res.json())
+        .then(res => {
+          if(res.user) 
+            this.props.dispatch({type: "LOGIN_USER", user: res.user})
+      })  
+      .then(console.log("Your token:", localStorage.token))
+      .then(e.target.reset())
   }
 
   render() {

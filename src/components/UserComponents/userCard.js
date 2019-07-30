@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Popup from "reactjs-popup";
 import { Card, ListGroup, Col, Image } from 'react-bootstrap';
-import EditUserForm from '../EditUserForm';
+import EditUserForm from './EditUserForm';
 
 
 class userCard extends Component {
@@ -17,7 +17,7 @@ class userCard extends Component {
         body: JSON.stringify({user: {
           location: e.target.location.value,
           email: e.target.editemail.value,
-          image: e.target.editimage.value,
+          img_url: e.target.editimage.value,
           } 
         })
       })
@@ -49,10 +49,13 @@ class userCard extends Component {
               <Card.Text>
               Location: {this.props.user.location}
               </Card.Text>
-                <Popup trigger={<button className="button"> Edit Profile</button>} position="right center" style={{ width: '18rem' }} closeOnDocumentClick>
+              <Card.Text>
+              Contact: {this.props.user.email}
+              </Card.Text>
+                <Popup trigger={<button className="button"> Edit Profile</button> } position="right center" style={{ width: '18rem' }} closeOnDocumentClick>
                   <EditUserForm/>
                 </Popup>
-              <h4><Card.Header>Followers: {this.props.user.followers.length} </Card.Header></h4>
+                <br/><br/><h4><Card.Header>Followers: {this.props.user.followers.length} </Card.Header></h4>
               <ListGroup >
                 {this.props.user.follower_users.map(follower => <ListGroup.Item key={follower.id}>{follower.username}</ListGroup.Item>)}
               </ListGroup>

@@ -7,7 +7,7 @@ import Search from './components/Search';
 import TrailsConditions from './components/TrailsConditions';
 import Navigation from './components/Navigation'
 import Createform from './components/Createform';
-import EditUserForm from './components/EditUserForm';
+import EditUserForm from './components/UserComponents/EditUserForm';
 import SearchUsers from './components/SearchUsers';
 import AppDiv from './components/AppDiv';
 

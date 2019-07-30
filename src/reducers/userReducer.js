@@ -3,9 +3,7 @@ import { LOGOUT_ACTION } from '../actions/types'
 const initialState = {
   currentUser: {},
   loggedIn: !!localStorage.token,
-  user: {id: 0, username: ' '}
 }
-// console.log(initialState)
 
 export default function reducer(state = initialState, action) {
   switch(action.type) {
