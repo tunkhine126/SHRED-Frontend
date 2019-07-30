@@ -7,6 +7,7 @@ import Search from './components/Search';
 import TrailsConditions from './components/TrailsConditions';
 import Navigation from './components/Navigation'
 import Createform from './components/Createform';
+import Trails from './components/Trails';
 import EditUserForm from './components/UserComponents/EditUserForm';
 import SearchUsers from './components/SearchUsers';
 import AppDiv from './components/AppDiv';
@@ -40,6 +41,7 @@ class App extends Component{
                   <Route exact path="/trailsconditions" render = {() => (this.props.loggedIn ? <TrailsConditions/> : <Redirect to='/profile'/>)}/>
                   <Route exact path="/editUserForm" render = {() => (this.props.loggedIn ? <EditUserForm/> : <Redirect to='/'/>)}/>
                   <Route exact path="/searchUsers" render = {() => (this.props.loggedIn ? <SearchUsers/> : <Redirect to='/'/>)}/>
+                  <Route exact path="/trails" render = {() => (this.props.loggedIn ? <Trails/> : <Redirect to='/'/>)}/>
                 </Switch>
             }
           </AppDiv>
