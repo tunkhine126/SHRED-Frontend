@@ -8,11 +8,11 @@ class EditUserForm extends Component {
   
   handleEdit = (e) => {
     e.preventDefault()
-    console.log(e.target)
+    // console.log(e.target)
  
       fetch(`http://localhost:3000/api/v1/users/${this.props.user_id}`, {
-        method: 'PUT',
-        headers: {'Content-Type': 'application/json', Accepts: 'application/json','Access-Control-Allow-Origin':'*'},
+        method: 'PATCH',
+        headers: {'Content-Type': 'application/json', Accepts: 'application/json', Authorization: localStorage.token},
         body: JSON.stringify({user: {
           location: e.target.location.value,
           email: e.target.editemail.value,
@@ -21,14 +21,9 @@ class EditUserForm extends Component {
         })
       })
       .then(res => res.json())
-      .then( res => {
-        if(res.jwt) {
-          localStorage.setItem('token', res.jwt)
-          localStorage.setItem('user_id', res.user.id)   
-          this.props.dispatch({type: "LOGIN_USER", user: res.user})
-          window.history.pushState({url: "/profile"}, "", "/profile")
-          this.forceUpdate() 
-        }
+        .then(res => {
+          if(res.user) 
+            this.props.dispatch({type: "LOGIN_USER", user: res.user})
       })  
       .then(console.log("Your token:", localStorage.token))
       .then(e.target.reset())

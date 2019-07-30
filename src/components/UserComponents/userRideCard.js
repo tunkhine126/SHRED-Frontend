@@ -5,7 +5,7 @@ import { Card } from 'react-bootstrap';
 class userRideCard extends Component {
 
   render() {
-    console.log(this.props.user.currentUser)
+    // console.log(this.props.user.currentUser)
     return (
       <div className="rideCard">
         <h2>Shreds</h2>

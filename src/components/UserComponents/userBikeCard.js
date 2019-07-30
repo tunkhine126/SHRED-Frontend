@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import AddBikeForm from '../AddBikeForm';
+import AddBikeForm from './AddBikeForm';
 import Popup from "reactjs-popup";
-import { Card, ListGroup } from 'react-bootstrap';
+import { Card, ListGroup, CardDeck } from 'react-bootstrap';
 
 class userBikeCard extends Component {
 
   render() {
-    // console.log(this.props.user)
+    console.log(this.props.user.bikes)
     return (
         <div>
           <h4 className="garageCard">GARAGE 
@@ -15,6 +15,7 @@ class userBikeCard extends Component {
                 <AddBikeForm/>
             </Popup>
           </h4> 
+          <CardDeck>
           {this.props.user.bikes.map(bike => 
             <Card key={bike.id} style={{ width: '20rem'}}>
             <Card.Img className="bikeimage" variant="bottom" src={bike.img_url} />
@@ -28,6 +29,7 @@ class userBikeCard extends Component {
                 Tires: {bike.tires}<br/>
               </ListGroup>
             </Card>)}
+          </CardDeck>
         </div>
     )
   }
