@@ -31,17 +31,17 @@ class App extends Component{
       <div>
         <AppDiv>
           <Navigation />  
-          {
-            localStorage.token && !this.props.user_id ? null :
-              <Switch>
-                <Route exact path="/" render = {() => (this.props.loggedIn ? <Redirect to='/profile'/> : <Createform /> )}/>
-                <Route exact path="/profile" render = {() => (this.props.loggedIn ? <Profile/> : <Redirect to='/'/>)}/>
-                <Route exact path="/search" render = {() => (this.props.loggedIn ? <Search/> : <Redirect to='/'/>)}/>
-                <Route exact path="/trailsconditions" render = {() => (this.props.loggedIn ? <TrailsConditions/> : <Redirect to='/profile'/>)}/>
-                <Route exact path="/editUserForm" render = {() => (this.props.loggedIn ? <EditUserForm/> : <Redirect to='/'/>)}/>
-                <Route exact path="/searchUsers" render = {() => (this.props.loggedIn ? <SearchUsers/> : <Redirect to='/'/>)}/>
-              </Switch>
-          }
+            {
+              localStorage.token && !this.props.user_id ? null :
+                <Switch>
+                  <Route exact path="/" render = {() => (this.props.loggedIn ? <Redirect to='/profile'/> : <Createform /> )}/>
+                  <Route exact path="/profile" render = {() => (this.props.loggedIn ? <Profile/> : <Redirect to='/'/>)}/>
+                  <Route exact path="/search" render = {() => (this.props.loggedIn ? <Search/> : <Redirect to='/'/>)}/>
+                  <Route exact path="/trailsconditions" render = {() => (this.props.loggedIn ? <TrailsConditions/> : <Redirect to='/profile'/>)}/>
+                  <Route exact path="/editUserForm" render = {() => (this.props.loggedIn ? <EditUserForm/> : <Redirect to='/'/>)}/>
+                  <Route exact path="/searchUsers" render = {() => (this.props.loggedIn ? <SearchUsers/> : <Redirect to='/'/>)}/>
+                </Switch>
+            }
           </AppDiv>
         </div>
     );

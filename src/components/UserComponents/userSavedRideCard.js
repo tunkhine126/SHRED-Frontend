@@ -6,8 +6,8 @@ class userSavedRideCard extends Component {
 
   render() {
     return (
-      <div>
-      <h2 className="savedRideCard">Saved Rides</h2>
+      <div >
+      <h2 className="savedRideCard" style={{ width: '30rem' }}>Saved Rides</h2>
         <Card  style={{ width: '30rem' }}>
             <Card.Img variant="top" src="holder.js/100px160" />
             <Card.Body>

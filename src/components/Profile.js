@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { CardDeck } from 'react-bootstrap';
 import UserCard from './UserComponents/userCard';
 import UserRideCard from './UserComponents/userRideCard';
 import UserSavedRideCard from './UserComponents/userSavedRideCard';
 import UserBikeCard from './UserComponents/userBikeCard';
 import ProfileDiv from '../components/ProfileDiv';
-
 
 class Profile extends Component { 
 
@@ -15,20 +13,22 @@ class Profile extends Component {
       <ProfileDiv>
         <CardDeck>
           <UserCard />
+          <div className="midCol">
           <UserRideCard />
+          </div>
+          <div className="rightCol">
           <UserSavedRideCard /> 
+          </div>
         </CardDeck>
         <br/>
         <CardDeck>
-          <UserBikeCard />
+          <div className="midCol">
+            <UserBikeCard />
+          </div>
         </CardDeck>
       </ProfileDiv>
     )
   }
 }
-
-const mapStateToProps = state => ({
-  user: state.userReducer
- })
  
- export default connect(mapStateToProps)(Profile);
+ export default Profile;

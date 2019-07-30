@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+import { Form, Col, Row } from 'react-bootstrap';
 
 class Createform extends Component {
   
@@ -25,7 +22,7 @@ class Createform extends Component {
         if(res.jwt) {
           localStorage.setItem('token', res.jwt)
           localStorage.setItem('user_id', res.user.id)   
-          this.props.dispatch({type: "LOGIN_USER", user: res.user})
+          // this.props.dispatch({type: "LOGIN_USER", user: res.user})
           window.history.pushState({url: "/profile"}, "", "/profile")
           this.forceUpdate() 
         }
@@ -38,35 +35,30 @@ class Createform extends Component {
   render() {
     return(
       <div>
-        <Card style={{ width: '18rem' }} >
-          <Card.Body>
-            <Card.Title>CREATE USER</Card.Title>
-            <Form onSubmit={(e) => this.handleCreate(e)}>
-              <Form.Group controlId="formCreateBasicUsername">
+        <br/><h1 className="splashHeader">The #1 App for Mountain Bikers</h1><br/><br/><br/>
+      <Row><Col></Col><Col xs={6}></Col>     
+        <Col>
+            <h3 className="text-center" style={{ width: '18rem' }}> Sign Up</h3>
+              <Form onSubmit={(e) => this.handleCreate(e)}>
+              <Form.Group style={{ width: '18rem' }}>
                 <Form.Label>Username</Form.Label>
-                <Form.Control name="createusername" type="username" placeholder="Enter username" />
-              </Form.Group>
-              <Form.Group controlId="formCreateBasicPassword">
+                   <Form.Control name="createusername" type="username" placeholder="Enter username" />
+               </Form.Group>
+              <Form.Group style={{ width: '18rem' }}>
                 <Form.Label>Password</Form.Label>
-                <Form.Control name="createpassword" type="password" placeholder="Password" />
+                  <Form.Control name="createpassword" type="password" placeholder="Password" />
+               </Form.Group>
+              <Form.Group style={{ width: '18rem' }}>
+                 <Form.Label>Email</Form.Label>
+                  <Form.Control name="createemail" type="text" placeholder="Email" />
               </Form.Group>
-              <Form.Group controlId="formCreateBasicEmail">
-                <Form.Label>Email</Form.Label>
-                <Form.Control name="createemail" type="text" placeholder="Email" />
-              </Form.Group>
-              <Button className="createButton" variant="primary" type="submit" >
-                Submit
-              </Button>
+              <button className="button" variant="primary" type="submit">Submit</button>
             </Form>
-          </Card.Body>
-      </Card>
+        </Col>
+      </Row>
     </div>
     )
   }
 }
 
-const mapStateToProps = state => ({
- user: state.userReducer.loggedIn
-})
-
-export default connect(mapStateToProps)(Createform);
+export default Createform;
