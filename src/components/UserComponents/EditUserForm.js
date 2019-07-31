@@ -16,15 +16,18 @@ class EditUserForm extends Component {
         body: JSON.stringify({user: {
           location: e.target.location.value,
           email: e.target.editemail.value,
-          image: e.target.editimage.value,
+          img_url: e.target.editimage.value,
           } 
         })
       })
       .then(res => res.json())
-        .then(res => {
-          if(res.user) 
-            this.props.dispatch({type: "LOGIN_USER", user: res.user})
-      })  
+      .then(res => console.log(res))
+      //   .then(res => {
+      //     // if(res.user) 
+      //       // this.props.dispatch({type: "LOGIN_USER", user: res.user})
+      //       window.history.pushState({url: "/profile"}, "", "/profile")
+      //       this.forceUpdate() 
+      // })  
       .then(console.log("Your token:", localStorage.token))
       .then(e.target.reset())
     

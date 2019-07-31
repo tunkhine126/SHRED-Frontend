@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Card } from 'react-bootstrap';
+import { Card, ListGroup, ListGroupItem } from 'react-bootstrap';
 
 class userRideCard extends Component {
 
   render() {
     return (
-      <div className="rideCard" style={{ width: '30rem' }}>
+      <div style={{ width: '25rem' }}>
         <h2>Shreds</h2>
-          {this.props.user.currentUser.rides.map(ride => 
-        <Card key={ride.id} >
-          <Card.Img variant="top" src="holder.js/100px160" />
+          {this.props.user.currentUser.trails.map(trail => 
+        <Card key={trail.id} >
+          <Card.Img variant="top" src= {trail.imgMedium} />
             <Card.Body>
-              <h4><Card.Header>Ride {ride.id}</Card.Header></h4>
-                <Card.Text>{ride.date}</Card.Text>
-                <Card.Text>{ride.description}</Card.Text>
+              <h4><Card.Header><Card.Link href={trail.url} target="_blank">{trail.name}</Card.Link></Card.Header></h4>
+              <ListGroup as="ul">
+              <ListGroupItem>DIFFICULTY: {trail.difficulty}</ListGroupItem>
+              <ListGroupItem>LOCATION: {trail.location}</ListGroupItem>
+              <ListGroupItem>STATUS: {trail.conditionStatus}</ListGroupItem>
+              </ListGroup>
             </Card.Body>
         </Card>)}
       </div>  

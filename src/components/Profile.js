@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { CardDeck } from 'react-bootstrap';
 import UserCard from './UserComponents/userCard';
 import UserRideCard from './UserComponents/userRideCard';
-import UserSavedRideCard from './UserComponents/userSavedRideCard';
+// import UserSavedRideCard from './UserComponents/userSavedRideCard';
 import UserBikeCard from './UserComponents/userBikeCard';
 import ProfileDiv from '../components/ProfileDiv';
+
 
 class Profile extends Component { 
 
@@ -16,9 +17,9 @@ class Profile extends Component {
           <div className="midCol">
           <UserRideCard />
           </div>
-          <div className="rightCol">
+          {/* <div className="rightCol">
           <UserSavedRideCard /> 
-          </div>
+          </div> */}
         </CardDeck>
         <br/>
         <CardDeck>
