@@ -26,7 +26,7 @@ class usersCard extends Component {
             <Card style={{ width: '17rem' }} key={user.id}> 
               <Card.Img className="userimage" variant="bottom" src={user.img_url} />
                 <Card.Body>
-                  <Card.Header>Username: {user.username}</Card.Header>
+                  <Card.Header className="text-center">{user.username}</Card.Header>
                   <Card.Text>Followers: {user.followed_users.length}</Card.Text>
                   <Card.Text>Shreds: {user.trails.length}</Card.Text>
                   <button className="addbutton" onClick={() => this.follow(user)}>Follow {user.username}</button>

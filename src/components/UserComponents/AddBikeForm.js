@@ -8,19 +8,22 @@ class AddBikeForm extends Component {
   
   handleAddBike = (e) => {
     e.preventDefault()
-    console.log(e)
+
+    // console.log(this.props.currentUser)
       fetch('http://localhost:3000/bikes', {
         method: 'POST',
         headers: {'Content-Type': 'application/json', Accepts: 'application/json',Authorization: localStorage.token},
-        body: JSON.stringify({user: {
+        body: JSON.stringify({bike: {
           name: e.target.name.value,
           img_url: e.target.image.value,
           category: e.target.category.value,
-          framset: e.target.frameset.value,
+          frameset: e.target.frameset.value,
           groupset: e.target.groupset.value,
           suspension: e.target.suspension.value,
           wheelset: e.target.wheelset.value,
           tires: e.target.tires.value,
+          brakes: e.target.brakes.value,
+          user_id: this.props.currentUser.id
           } 
         })
       })
@@ -47,6 +50,7 @@ class AddBikeForm extends Component {
                   <Form.Control name="groupset" type="text" placeholder="Enter Groupset" />
                   <Form.Control name="suspension" type="text" placeholder="Enter Suspension" />
                   <Form.Control name="wheelset" type="text" placeholder="Enter Wheelset" />
+                  <Form.Control name="brakes" type="text" placeholder="Enter Brakes" />
                   <Form.Control name="tires" type="text" placeholder="Enter Tires" />
               </Form.Group>
               <Button className="createButton" variant="primary" type="submit" >
@@ -60,7 +64,8 @@ class AddBikeForm extends Component {
 }
 
 const mapStateToProps = state => ({
- user: state.userReducer.loggedIn
+ user: state.userReducer.loggedIn,
+ currentUser: state.userReducer.currentUser
 })
 
 export default connect(mapStateToProps)(AddBikeForm);
