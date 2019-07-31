@@ -16,7 +16,7 @@ code {
   margin: auto;
   width:100%; 
   max-width:1200px; 
-  height:500px
+  height:300px
 }
 
 .conditions-map {
@@ -34,6 +34,16 @@ code {
   max-height:250px;
   width: auto;
   height: auto;
+}
+
+.trailImage {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    max-width:400px;
+    max-height:250px;
+    width: auto;
+    height: auto;
 }
 
 .userimage {
@@ -80,6 +90,10 @@ code {
 .searchTrailButton {
   margin: auto;
 }
+
+.trailName {
+  text-align: center;
+}
 .navigation {
   color: black;
 }
@@ -97,6 +111,15 @@ code {
   border-radius: 2px;
   border: 2px solid  #e91e63;
   box-shadow: 0 8px 16px 0 rgba(230, 53, 53, 0.043), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.addbutton {
+  background-color: #e91e63;
+  color: white;
+  border-radius: 2px;
+  border: 2px solid  #e91e63;
+  box-shadow: 0 8px 16px 0 rgba(230, 53, 53, 0.043), 0 6px 20px 0 rgba(0,0,0,0.19);
+  padding: 0px;
 }
 
 .logoutButton {
