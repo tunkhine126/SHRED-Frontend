@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Form, Col, Row } from 'react-bootstrap';
 
 class Createform extends Component {
@@ -22,7 +23,7 @@ class Createform extends Component {
         if(res.jwt) {
           localStorage.setItem('token', res.jwt)
           localStorage.setItem('user_id', res.user.id)   
-          // this.props.dispatch({type: "LOGIN_USER", user: res.user})
+          this.props.dispatch({type: "LOGIN_USER", user: res.user})
           window.history.pushState({url: "/profile"}, "", "/profile")
           this.forceUpdate() 
         }
@@ -61,4 +62,8 @@ class Createform extends Component {
   }
 }
 
-export default Createform;
+const mapStateToProps = state => ({
+  user: state.userReducer.loggedIn
+ })
+ 
+ export default connect(mapStateToProps)(Createform);
