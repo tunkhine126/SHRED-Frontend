@@ -48,13 +48,14 @@ class Navigation extends Component {
               borderWidth: 1,
             }}
           />
-          <Navbar.Brand href="/">SHRED</Navbar.Brand>
+          <Navbar.Brand> SHRED</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto"></Nav>
               {(this.props.user ? 
               <div>
-                <Navbar.Brand href="/search"> Search trails</Navbar.Brand>
+                <Navbar.Brand href="/"> {this.props.currentUser.username}</Navbar.Brand>
+                <Navbar.Brand href="/searchtrails"> Search trails</Navbar.Brand>
                 <Navbar.Brand href="/trailsconditions"> Trail conditions</Navbar.Brand>
                 <Navbar.Brand href="/searchUsers">Search Users</Navbar.Brand>
                 <button className="button" onClick={() => this.props.dispatch({type: 'LOGOUT_ACTION'})}>LOGOUT</button>
@@ -79,7 +80,8 @@ class Navigation extends Component {
 }
 
 const mapStateToProps = state => ({
-  user: state.userReducer.loggedIn
+  user: state.userReducer.loggedIn, 
+  currentUser: state.userReducer.currentUser
  })
 
 export default connect(mapStateToProps)(Navigation);
