@@ -20,7 +20,7 @@ class usersCard extends Component {
 
   render() {
     return (
-      <div>
+      <div><br/>
         <CardColumns>
           {this.props.allUsers && this.props.allUsers.map(user =>
             <Card style={{ width: '17rem' }} key={user.id}> 

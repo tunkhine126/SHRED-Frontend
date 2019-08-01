@@ -21,13 +21,11 @@ class EditUserForm extends Component {
         })
       })
       .then(res => res.json())
-      .then(res => console.log(res))
-      //   .then(res => {
-      //     // if(res.user) 
-      //       // this.props.dispatch({type: "LOGIN_USER", user: res.user})
-      //       window.history.pushState({url: "/profile"}, "", "/profile")
-      //       this.forceUpdate() 
-      // })  
+      .then(res => {
+        console.log(res)
+        if(res.id)
+          this.props.dispatch({ type: 'LOGIN_USER', user: res })
+      })
       .then(console.log("Your token:", localStorage.token))
       .then(e.target.reset())
     

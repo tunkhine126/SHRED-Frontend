@@ -10,14 +10,14 @@ class userBikeCard extends Component {
     return (
       <div>
         <div style={{ width: '80rem'}}>
-          <h3 className="garageCard">GARAGE   
-            <Popup trigger={<button className="addbutton">+</button>} position="right center" style={{ width: '18rem' }} closeOnDocumentClick>
+          <h2 className="garagetitleText">Your Garage {' '}   
+            <Popup trigger={<button className="garageAddButton">+</button>} position="right center" style={{ width: '18rem' }} closeOnDocumentClick>
                 <AddBikeForm/>
             </Popup>
-          </h3> 
-          <CardDeck>
+          </h2> 
+          <CardDeck >
           {this.props.user.bikes.map(bike => 
-            <Card key={bike.id} >
+            <Card key={bike.id} className="cardSpecs">
             <Card.Img className="bikeimage" variant="bottom" src={bike.img_url} />
               <ListGroup>
                 Name: {bike.name}<br/>

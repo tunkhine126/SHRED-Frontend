@@ -30,7 +30,7 @@ class App extends Component{
   render() {
     return (
       <div>
-        <AppDiv>
+        {/* <AppDiv> */}
           <Navigation />  
             {
               localStorage.token && !this.props.user_id ? null :
@@ -44,7 +44,7 @@ class App extends Component{
                   <Route exact path="/trails" render = {() => (this.props.loggedIn ? <Trails/> : <Redirect to='/'/>)}/>
                 </Switch>
             }
-          </AppDiv>
+          {/* </AppDiv> */}
         </div>
     );
   }
