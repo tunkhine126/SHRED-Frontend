@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Iframe from 'react-iframe'
 import TrailsCard from './TrailsCard'
-import { Row } from 'react-bootstrap';
+// import { Row } from 'react-bootstrap';
+import SearchDiv from '../components/SearchDiv';
 
 class Search extends Component {
 
   fetchTrails = (lat, lon) => {
-    const maxResults = 25
+    const maxResults = 100
     const decimalReplaceLat = lat.replace('.', '!')
     const decimalReplaceLon = lon.replace('.', '!')
     fetch(`http://localhost:3000/trails&lat=${decimalReplaceLat}&lon=${decimalReplaceLon}&maxResults=${maxResults}`)
@@ -21,7 +22,7 @@ class Search extends Component {
 
   render() {
     return(
-      <div>
+      <SearchDiv>
         <h1 className="searchText">SEARCH TRAILS NEAR YOU</h1> 
         <Iframe 
           align="center"
@@ -30,13 +31,8 @@ class Search extends Component {
           scrolling="yes" 
           src="https://www.mtbproject.com/widget/map?favs=1&location=ip&x=-9393817&y=4002233&z=9.5&h=300">
         </Iframe><br/>
-        <div className="garageMidCol">
-
-        </div>
-          <Row className="trailsrow">
           <TrailsCard />
-          </Row>
-        </div>
+        </SearchDiv>
     )
   }
 }

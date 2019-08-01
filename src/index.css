@@ -35,10 +35,9 @@ code {
   margin-left: auto;
   margin-right: auto;
   display: block;
-  max-width:400px;
-  max-height:250px;
-  width: auto;
-  height: auto;
+  max-width:210px;
+  max-height:200px;
+  border-radius: 4px;
 }
 
 .trailImage {
@@ -55,26 +54,40 @@ code {
   margin-left: auto;
   margin-right: auto;
   display: block;
-  max-width:200px;
+  max-width:210px;
   max-height:200px;
-  width: auto;
-  height: auto;
+  border-radius: 4px;
+  /* width: 100px;
+  height: 200px; */
+}
+
+.rideImage {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  max-width:210px;
+  max-height:200px;
+  border-radius: 4px;
 }
 
 .cardSpecs {
   margin-left: auto;
+  border-radius: 10px;
   margin-right: auto;
-  display: block;
+  display: inline-block;
   max-width:400px;
-  background: transparent;
-  /* max-height:400px; */
-  /* width: auto; */
+  opacity: 0.9;
   height: auto;
 }
 
 .userCard {
   text-align: center;
   color: black
+}
+
+.userProfileCard {
+background-color: white;
+opacity: 0.9;
 }
 .garageCard {
   text-align: center;
@@ -149,7 +162,7 @@ code {
 }
 
 .garageMidCol {
-  overflow-y: hidden;
+  overflow-x: hidden;
   background: transparent;
   margin-left: 380px;
 }

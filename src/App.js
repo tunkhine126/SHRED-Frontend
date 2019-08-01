@@ -10,7 +10,7 @@ import Createform from './components/Createform';
 import Trails from './components/Trails';
 import EditUserForm from './components/UserComponents/EditUserForm';
 import SearchUsers from './components/SearchUsers';
-import AppDiv from './components/AppDiv';
+// import AppDiv from './components/AppDiv';
 
 class App extends Component{
 

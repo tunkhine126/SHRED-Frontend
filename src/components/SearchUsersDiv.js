@@ -3,10 +3,11 @@ import defaultImg from '../images/searchUsers.jpg'
 
 const SearchUsersDiv = styled.div`
 background-image: url(${defaultImg});
-min-height: 100vh;
+height: 100vh;
 background-size: cover;
 background-position: center;
 z-index: -1;
+overflow: auto;
 `
 
 export default SearchUsersDiv
