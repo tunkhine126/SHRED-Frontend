@@ -6,7 +6,7 @@ import TrailsDiv from '../components/TrailsDiv';
 class Trails extends Component {
 
   fetchTrails = (lat, lon) => {
-    const maxResults = 25
+    const maxResults = 100
     const decimalReplaceLat = lat.replace('.', '!')
     const decimalReplaceLon = lon.replace('.', '!')
     fetch(`http://localhost:3000/trails&lat=${decimalReplaceLat}&lon=${decimalReplaceLon}&maxResults=${maxResults}`)

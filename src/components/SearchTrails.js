@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Iframe from 'react-iframe'
 import TrailsCard from './TrailsCard'
+import { Row } from 'react-bootstrap';
+
 class Search extends Component {
 
   fetchTrails = (lat, lon) => {
@@ -28,8 +30,13 @@ class Search extends Component {
           scrolling="yes" 
           src="https://www.mtbproject.com/widget/map?favs=1&location=ip&x=-9393817&y=4002233&z=9.5&h=300">
         </Iframe><br/>
-          <TrailsCard /><br/>
-      </div>
+        <div className="garageMidCol">
+
+        </div>
+          <Row className="trailsrow">
+          <TrailsCard />
+          </Row>
+        </div>
     )
   }
 }

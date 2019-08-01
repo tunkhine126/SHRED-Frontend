@@ -8,8 +8,6 @@ class AddBikeForm extends Component {
   
   handleAddBike = (e) => {
     e.preventDefault()
-
-    // console.log(this.props.currentUser)
       fetch('http://localhost:3000/bikes', {
         method: 'POST',
         headers: {'Content-Type': 'application/json', Accepts: 'application/json',Authorization: localStorage.token},

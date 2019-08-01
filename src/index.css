@@ -19,6 +19,11 @@ code {
   height:300px
 }
 
+.trailsrow {
+  margin-left: auto;
+  margin-right: auto;
+} 
+
 .conditions-map {
   margin: auto;
   width:100%;
@@ -50,9 +55,20 @@ code {
   margin-left: auto;
   margin-right: auto;
   display: block;
-  max-width:250px;
-  max-height:250px;
+  max-width:200px;
+  max-height:200px;
   width: auto;
+  height: auto;
+}
+
+.cardSpecs {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  max-width:400px;
+  background: transparent;
+  /* max-height:400px; */
+  /* width: auto; */
   height: auto;
 }
 
@@ -126,14 +142,45 @@ code {
   color: #e91e63
 }
 
+.shredsRightCol {
+  overflow-x: hidden;
+  min-height: 300px;
+  max-width: 100%;
+}
+
+.garageMidCol {
+  overflow-y: hidden;
+  background: transparent;
+  margin-left: 380px;
+}
+
+.garageAddButton {
+  background-color: #e91e63;
+  color: white;
+  border-radius: 2px;
+  border: 2px solid  #e91e63;
+  box-shadow: 0 8px 16px 0 rgba(230, 53, 53, 0.043), 0 6px 20px 0 rgba(0,0,0,0.19);
+  padding: 0px;
+}
+
+.garagetitleText{
+
+  /* background-color: #d0cacc; */
+  color: black
+}
+
 .midCol {
   overflow-y: hidden;
-  background: transparent
+  background: transparent;
+  margin: auto;
+  border-radius: 1px;
+  border: 1px solid  grey;
 }
+
 
 .rightCol {
   overflow-y: hidden;
-  background: transparent
+  background: transparent;
 }
 
 .splashHeader {

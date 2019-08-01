@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Card, Row, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { Card, CardDeck, Row, ListGroup, ListGroupItem } from 'react-bootstrap';
 
 class trailsCard extends Component {
 
@@ -20,9 +20,8 @@ class trailsCard extends Component {
 
   render() {
     return (
-      <div>
-        <Row>
-        {this.props.trails && this.props.trails.map(trail =>
+        <Row className="trailsrow">
+        {this.props.trails.map(trail =>
           <Card key={trail.id} style={{ width: '20rem' }} > 
           <Card.Img variant="top" src={trail.imgSmallMed} style={{ height: '20rem' }}/>
             <Card.Body>
@@ -36,8 +35,7 @@ class trailsCard extends Component {
             </Card.Body>
         </Card>
         )}
-        </Row><br/>
-      </div>
+        </Row>
     )
   }
 }

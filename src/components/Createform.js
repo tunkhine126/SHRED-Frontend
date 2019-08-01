@@ -43,15 +43,15 @@ class Createform extends Component {
               <Form onSubmit={(e) => this.handleCreate(e)}>
               <Form.Group style={{ width: '18rem' }}>
                 <Form.Label>Username</Form.Label>
-                   <Form.Control name="createusername" type="username" placeholder="Enter username" />
+                   <Form.Control name="createusername" type="username" placeholder="Enter a username" />
                </Form.Group>
               <Form.Group style={{ width: '18rem' }}>
                 <Form.Label>Password</Form.Label>
-                  <Form.Control name="createpassword" type="password" placeholder="Password" />
+                  <Form.Control name="createpassword" type="password" placeholder="Enter a password" />
                </Form.Group>
               <Form.Group style={{ width: '18rem' }}>
                  <Form.Label>Email</Form.Label>
-                  <Form.Control name="createemail" type="text" placeholder="Email" />
+                  <Form.Control name="createemail" type="text" placeholder="Enter a email address" />
               </Form.Group>
               <button className="button" variant="primary" type="submit">Submit</button>
             </Form>
