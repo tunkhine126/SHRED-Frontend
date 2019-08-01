@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Form, Col, Row } from 'react-bootstrap';
+import AppDiv from './AppDiv';
 
 class Createform extends Component {
   
@@ -35,6 +36,7 @@ class Createform extends Component {
 
   render() {
     return(
+      <AppDiv>
       <div>
         <br/><h1 className="splashHeader">The #1 App for Mountain Bikers</h1><br/><br/><br/>
       <Row><Col></Col><Col xs={6}></Col>     
@@ -43,21 +45,22 @@ class Createform extends Component {
               <Form onSubmit={(e) => this.handleCreate(e)}>
               <Form.Group style={{ width: '18rem' }}>
                 <Form.Label>Username</Form.Label>
-                   <Form.Control name="createusername" type="username" placeholder="Enter a username" />
+                   <Form.Control required={true} name="createusername" type="username" placeholder="Enter a username" />
                </Form.Group>
               <Form.Group style={{ width: '18rem' }}>
                 <Form.Label>Password</Form.Label>
-                  <Form.Control name="createpassword" type="password" placeholder="Enter a password" />
+                  <Form.Control required={true} name="createpassword" type="password" placeholder="Enter a password" />
                </Form.Group>
               <Form.Group style={{ width: '18rem' }}>
                  <Form.Label>Email</Form.Label>
-                  <Form.Control name="createemail" type="text" placeholder="Enter a email address" />
+                  <Form.Control required={true} name="createemail" type="email" placeholder="Enter a email address" />
               </Form.Group>
               <button className="button" variant="primary" type="submit">Submit</button>
             </Form>
         </Col>
       </Row>
     </div>
+    </AppDiv>
     )
   }
 }

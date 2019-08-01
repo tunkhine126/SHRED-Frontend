@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import AddBikeForm from './AddBikeForm';
 import Popup from "reactjs-popup";
-import { Card, ListGroup, CardDeck } from 'react-bootstrap';
+import { Card, CardDeck } from 'react-bootstrap';
 
 class userBikeCard extends Component {
 
   render() {
     return (
       <div>
-        <div style={{ width: '80rem'}}>
+        <div style={{ width: '70rem'}}>
           <h2 className="garagetitleText">Your Garage {' '}   
             <Popup trigger={<button className="garageAddButton">+</button>} position="right center" style={{ width: '18rem' }} closeOnDocumentClick>
                 <AddBikeForm/>
@@ -18,8 +18,8 @@ class userBikeCard extends Component {
           <CardDeck >
           {this.props.user.bikes.map(bike => 
             <Card key={bike.id} className="cardSpecs">
-            <Card.Img className="bikeimage" variant="bottom" src={bike.img_url} />
-              <ListGroup>
+            <Card.Img className="bikeimage" variant="top" src={bike.img_url} />
+            <Popup trigger={<button className="garageAddButton">Specs</button>} position="top center" style={{ width: '18rem' }} closeOnDocumentClick>
                 Name: {bike.name}<br/>
                 Category: {bike.category}<br/>  
                 Frameset: {bike.frameset}<br/>
@@ -27,7 +27,7 @@ class userBikeCard extends Component {
                 Suspension: {bike.suspension}<br/>
                 Wheelset: {bike.wheelset}<br/>
                 Tires: {bike.tires}<br/>
-              </ListGroup>
+              </Popup>
             </Card>)}
           </CardDeck>
         </div>

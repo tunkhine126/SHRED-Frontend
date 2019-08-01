@@ -15,16 +15,17 @@ class usersCard extends Component {
       })
     })
     .then(res => res.json())
-    // .then(console.log)
+    .then(alert(`${user.username} Followed!`))
   }
 
   render() {
     return (
       <div><br/>
         <CardColumns>
-          {this.props.allUsers && this.props.allUsers.map(user =>
+        <div>
+          {this.props.allUsers.map(user =>
             <Card style={{ width: '17rem' }} key={user.id}> 
-              <Card.Img className="userimage" variant="bottom" src={user.img_url} />
+              <Card.Img className="userimage" src={user.img_url} />
                 <Card.Body>
                   <Card.Header className="text-center">{user.username}</Card.Header>
                   <Card.Text>Followers: {user.followed_users.length}</Card.Text>
@@ -33,6 +34,7 @@ class usersCard extends Component {
                 </Card.Body>
             </Card>
           )}
+          </div>
         </CardColumns>
       </div>
     )

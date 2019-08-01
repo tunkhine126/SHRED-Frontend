@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import SearchUsersDiv from '../components/SearchUsersDiv';
 import UsersCard from '../components/UsersCard';
+import { CardDeck } from 'react-bootstrap';
 
 class SearchUsers extends Component { 
 
@@ -20,7 +21,9 @@ class SearchUsers extends Component {
   render() {
     return(
       <SearchUsersDiv>
-        <UsersCard />
+        <CardDeck>
+          <UsersCard />
+        </CardDeck>
       </SearchUsersDiv>
     )
   }

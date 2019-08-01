@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Card, CardDeck, Row, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { Card, Row, ListGroup, ListGroupItem } from 'react-bootstrap';
+import Image from '../images/defaultShred.jpg'
 
 class trailsCard extends Component {
 
@@ -15,20 +16,21 @@ class trailsCard extends Component {
         })
       })
       .then(res => res.json())
-      .then(console.log)
+      .then(alert(`${trail.name} Added!`))
     }
 
   render() {
     return (
-        <Row className="trailsrow">
+        <Row className="trailsrow d-flex justify-content-center m-3">
         {this.props.trails.map(trail =>
-          <Card key={trail.id} style={{ width: '20rem' }} > 
-          <Card.Img variant="top" src={trail.imgSmallMed} style={{ height: '20rem' }}/>
+          <Card key={trail.id} style={{ width: '20rem' }} className="m-3"> 
+          {trail.imgSmallMed ? <Card.Img variant="top" src={trail.imgSmallMed} className="trailImage"/> : <Card.Img variant="top" src={Image} className="trailImage"/>}
             <Card.Body>
               <h4 className="trailName"><Card.Link href={trail.url} target="_blank">{trail.name}</Card.Link></h4>
               <Card.Text>{trail.summary}</Card.Text>
               <ListGroup className="list-group-flush">
-                <ListGroupItem>Status: {trail.conditionStatus}</ListGroupItem>
+              <ListGroupItem>{trail.stars} Stars</ListGroupItem>
+                <ListGroupItem>Location: {trail.location}</ListGroupItem>
                 <ListGroupItem>{trail.stars} Stars</ListGroupItem>
                 <button className="addbutton" onClick={() => this.addTrail(trail)}>Add to Shreds</button>
               </ListGroup>

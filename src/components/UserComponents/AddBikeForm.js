@@ -27,8 +27,9 @@ class AddBikeForm extends Component {
       })
       .then(res => res.json())
         .then(res => {
-          if(res.user) 
-            this.props.dispatch({type: "LOGIN_USER", user: res.user})
+          console.log(res)
+          if(res.user_id) 
+            this.props.dispatch({type: "LOGIN_USER", user: res})
       })  
       .then(console.log("Your token:", localStorage.token))
       .then(e.target.reset())
@@ -42,7 +43,7 @@ class AddBikeForm extends Component {
               <Form.Group controlId="addBikeForm">
               <Card.Text>Add a Bike</Card.Text>
                   <Form.Control name="name" type="text" placeholder="Enter Name" />
-                  <Form.Control name="image" type="text" placeholder="Enter Image URL" />
+                  <Form.Control name="image" type="text" placeholder="Enter Image URL" required={true}/>
                   <Form.Control name="category" type="text" placeholder="Enter Category" />
                   <Form.Control name="frameset" type="text" placeholder="Enter Frameset" />
                   <Form.Control name="groupset" type="text" placeholder="Enter Groupset" />
