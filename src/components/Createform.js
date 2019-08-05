@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Form, Col, Row } from 'react-bootstrap';
-import AppDiv from './AppDiv';
+import AppDiv from './AppDiv.js';
 
 class Createform extends Component {
   
   handleCreate = (e) => {
     e.preventDefault()
-    // console.log(e)
     if(e.target.createusername.value && e.target.createpassword.value && e.target.createemail.value) {
       fetch('http://localhost:3000/api/v1/users', {
         method: 'POST',
@@ -37,30 +36,30 @@ class Createform extends Component {
   render() {
     return(
       <AppDiv>
-      <div>
-        <br/><h1 className="splashHeader">The #1 App for Mountain Bikers</h1><br/><br/><br/>
-      <Row><Col></Col><Col xs={6}></Col>     
-        <Col>
+        <div>
+          <br/><h1 className="splashHeader">The #1 App for Mountain Bikers</h1><br/><br/><br/>
+        <Row><Col></Col><Col xs={6}></Col>     
+          <Col>
             <h3 className="text-center" style={{ width: '18rem' }}> Sign Up</h3>
               <Form onSubmit={(e) => this.handleCreate(e)}>
-              <Form.Group style={{ width: '18rem' }}>
-                <Form.Label>Username</Form.Label>
+                <Form.Group style={{ width: '18rem' }}>
+                  <Form.Label>Username</Form.Label>
                    <Form.Control required={true} name="createusername" type="username" placeholder="Enter a username" />
-               </Form.Group>
-              <Form.Group style={{ width: '18rem' }}>
-                <Form.Label>Password</Form.Label>
-                  <Form.Control required={true} name="createpassword" type="password" placeholder="Enter a password" />
-               </Form.Group>
-              <Form.Group style={{ width: '18rem' }}>
+                </Form.Group>
+                <Form.Group style={{ width: '18rem' }}>
+                  <Form.Label>Password</Form.Label>
+                    <Form.Control required={true} name="createpassword" type="password" placeholder="Enter a password" />
+                </Form.Group>
+                <Form.Group style={{ width: '18rem' }}>
                  <Form.Label>Email</Form.Label>
                   <Form.Control required={true} name="createemail" type="email" placeholder="Enter a email address" />
-              </Form.Group>
+                </Form.Group>
               <button className="button" variant="primary" type="submit">Submit</button>
             </Form>
-        </Col>
-      </Row>
-    </div>
-    </AppDiv>
+          </Col>
+        </Row>
+        </div>
+      </AppDiv>
     )
   }
 }

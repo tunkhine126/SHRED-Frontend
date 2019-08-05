@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Iframe from 'react-iframe'
 import TrailsCard from './TrailsCard'
-// import { Row } from 'react-bootstrap';
 import SearchDiv from '../components/SearchDiv';
 
 class Search extends Component {
