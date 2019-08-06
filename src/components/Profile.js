@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { CardDeck, Col, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import UserCard from './UserComponents/userCard';
 import UserRideCard from './UserComponents/userRideCard';
 import UserBikeCard from './UserComponents/userBikeCard';

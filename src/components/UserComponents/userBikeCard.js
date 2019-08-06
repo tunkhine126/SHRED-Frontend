@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import AddBikeForm from './AddBikeForm';
 import Popup from "reactjs-popup";
-import { Card, CardDeck, Button } from 'react-bootstrap';
-import EditBikeForm from './EditBikeForm'
+import { Card, CardDeck } from 'react-bootstrap';
 
 class userBikeCard extends Component {
 
