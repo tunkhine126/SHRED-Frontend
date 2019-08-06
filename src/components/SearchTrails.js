@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Iframe from 'react-iframe'
 import TrailsCard from './TrailsCard'
-import SearchDiv from '../components/SearchDiv';
+import SearchDiv from './ImageDivs/SearchDiv.js';
+
 
 class Search extends Component {
 
@@ -28,10 +29,12 @@ class Search extends Component {
           className = "trails-map"
           frameborder="0" 
           scrolling="yes" 
-          src="https://www.mtbproject.com/widget/map?favs=1&location=ip&x=-9393817&y=4002233&z=9.5&h=300">
+          src="https://www.mtbproject.com/widget/map?favs=1&location=ip&x=-9393817&y=4002233&z=9.5&h=600">
         </Iframe><br/>
           <TrailsCard />
+        <br />
         </SearchDiv>
+        
     )
   }
 }

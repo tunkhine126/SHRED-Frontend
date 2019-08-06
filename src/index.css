@@ -16,7 +16,8 @@ code {
   margin: auto;
   width:100%; 
   max-width:1200px; 
-  height:300px
+  height:600px;
+  border: none;
 }
 
 .trailsrow {
@@ -28,16 +29,16 @@ code {
   margin: auto;
   width:100%;
   max-width: 978px; 
-  height: 398px;
+  height: 600px;
+  border: none;
 }
 
 .bikeimage {
   margin-left: auto;
   margin-right: auto;
   display: block;
-  max-width:210px;
+  max-width:180px;
   max-height:200px;
-  border-radius: 4px;
 }
 
 .trailImage {
@@ -156,13 +157,13 @@ opacity: 0.9;
 }
 
 .shredsRightCol {
-  overflow-x: hidden;
-  min-height: 300px;
-  max-width: 100%;
+  overflow-x: auto;
+  background: transparent;
+  margin-left: 45px;
 }
 
 .garageMidCol {
-  overflow-x: hidden;
+  overflow-x: auto;
   background: transparent;
   margin-left: 380px;
 }
@@ -177,8 +178,7 @@ opacity: 0.9;
 }
 
 .garagetitleText{
-
-  /* background-color: #d0cacc; */
+  
   color: black
 }
 

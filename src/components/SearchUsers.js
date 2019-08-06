@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import SearchUsersDiv from '../components/SearchUsersDiv';
-import UsersCard from '../components/UsersCard';
+import SearchUsersDiv from './ImageDivs/SearchUsersDiv';
+import AllUsersCard from './AllUsersCard';
 import { CardDeck } from 'react-bootstrap';
 
 class SearchUsers extends Component { 
@@ -22,7 +22,7 @@ class SearchUsers extends Component {
     return(
       <SearchUsersDiv>
         <CardDeck>
-          <UsersCard />
+          <AllUsersCard />
         </CardDeck>
       </SearchUsersDiv>
     )

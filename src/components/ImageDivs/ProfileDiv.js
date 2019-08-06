@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import defaultImg from '../images/trails.jpg'
+import defaultImg from './profile.jpg'
 
-const TrailsDiv = styled.div`
+const ProfileDiv = styled.div`
 background-image: url(${defaultImg});
 min-height: 100vh;
 background-size: cover;
@@ -9,4 +9,4 @@ background-position: center;
 z-index: -1;
 `
 
-export default TrailsDiv
+export default ProfileDiv
