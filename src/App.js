@@ -5,12 +5,10 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import Profile from './components/Profile';
 import SearchTrails from './components/SearchTrails';
 import TrailsConditions from './components/TrailsConditions';
-import Navigation from './components/Navigation'
-import Createform from './components/Createform';
-import Trails from './components/Trails';
+import Navigation from './components/NavigationBar'
+import Createform from './components/CreateNewUserForm';
 import EditUserForm from './components/UserComponents/EditUserForm';
 import SearchUsers from './components/SearchUsers';
-// import AppDiv from './components/AppDiv';
 
 class App extends Component{
 
@@ -30,7 +28,6 @@ class App extends Component{
   render() {
     return (
       <div>
-        {/* <AppDiv> */}
           <Navigation />  
             {
               localStorage.token && !this.props.user_id ? null :
@@ -38,13 +35,11 @@ class App extends Component{
                   <Route exact path="/" render = {() => (this.props.loggedIn ? <Redirect to='/profile'/> : <Createform /> )}/>
                   <Route exact path="/profile" render = {() => (this.props.loggedIn ? <Profile/> : <Redirect to='/'/>)}/>
                   <Route exact path="/searchtrails" render = {() => (this.props.loggedIn ? <SearchTrails/> : <Redirect to='/'/>)}/>
-                  <Route exact path="/trailsconditions" render = {() => (this.props.loggedIn ? <TrailsConditions/> : <Redirect to='/profile'/>)}/>
+                  <Route exact path="/trailsconditions" render = {() => (this.props.loggedIn ? <TrailsConditions/> : <Redirect to='/'/>)}/>
                   <Route exact path="/editUserForm" render = {() => (this.props.loggedIn ? <EditUserForm/> : <Redirect to='/'/>)}/>
                   <Route exact path="/searchUsers" render = {() => (this.props.loggedIn ? <SearchUsers/> : <Redirect to='/'/>)}/>
-                  <Route exact path="/trails" render = {() => (this.props.loggedIn ? <Trails/> : <Redirect to='/'/>)}/>
                 </Switch>
             }
-          {/* </AppDiv> */}
         </div>
     );
   }

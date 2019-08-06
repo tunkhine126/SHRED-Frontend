@@ -5,7 +5,6 @@ import { Card, ListGroup, Col } from 'react-bootstrap';
 import EditUserForm from './EditUserForm';
 import Image from './default-user-icon-9.jpg'
 
-
 class userCard extends Component {
 
   render() {
@@ -25,7 +24,6 @@ class userCard extends Component {
                   <EditUserForm/>
                 </Popup>
                 <br/><br/>
-                
                   <Popup trigger={<button className="button"> Followers: {this.props.user.followed_users.length} </button> } 
                     position="bottom" 
                     style={{ width: '18rem' }} 

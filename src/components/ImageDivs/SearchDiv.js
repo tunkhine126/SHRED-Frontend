@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import defaultImg from '../images/search.jpg'
+import defaultImg from './search.jpg'
 
 const SearchDiv = styled.div`
 background-image: url(${defaultImg});

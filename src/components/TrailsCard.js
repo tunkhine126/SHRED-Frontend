@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Card, Row, ListGroup, ListGroupItem } from 'react-bootstrap';
 import Image from '../images/defaultShred.jpg'
+import Popup from "reactjs-popup";
 
 class trailsCard extends Component {
 
@@ -31,13 +32,20 @@ class trailsCard extends Component {
               <ListGroup className="list-group-flush">
               <ListGroupItem>{trail.stars} Stars</ListGroupItem>
                 <ListGroupItem>Location: {trail.location}</ListGroupItem>
-                <ListGroupItem>{trail.stars} Stars</ListGroupItem>
+                <Popup trigger={<button className="addButton">Expand Info</button>} position="top center" style={{ width: '18rem' }} closeOnDocumentClick>
+                  Difficulty: {trail.difficulty}<br />
+                  Type: {trail.type}<br />
+                  Ascent: {trail.ascent}'<br />
+                  Descent: {trail.descent}'<br />
+                  High: {trail.high}'<br />
+                  Low: {trail.low}'<br />
+                </Popup>
                 <button className="addbutton" onClick={() => this.addTrail(trail)}>Add to Shreds</button>
               </ListGroup>
             </Card.Body>
         </Card>
         )}
-        </Row>
+      </Row>
     )
   }
 }

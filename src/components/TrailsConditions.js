@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Iframe from 'react-iframe'
-import TrailsDiv from '../components/TrailsDiv';
+import TrailsDiv from './ImageDivs/TrailsDiv';
 
 class TrailsConditions extends Component {
 
@@ -14,7 +14,7 @@ class TrailsConditions extends Component {
             className="conditions-map" 
             frameborder="0" 
             scrolling="yes" 
-            src="https://www.mtbproject.com/widget/conditions?favs=1&location=v=3&x=-9393453&y=4000267&z=5&height=400">
+            src="https://www.mtbproject.com/widget/conditions?favs=1&location=v=3&x=-9393453&y=4000267&z=5&height=600">
           </Iframe>
       </TrailsDiv>
     )

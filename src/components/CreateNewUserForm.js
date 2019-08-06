@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Form, Col, Row } from 'react-bootstrap';
-import AppDiv from './AppDiv.js';
+import AppDiv from './ImageDivs/AppDiv.js';
 
 class Createform extends Component {
   

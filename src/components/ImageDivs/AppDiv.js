@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import defaultImg from '../images/splash_page.jpg'
+import defaultImg from './splash_page.jpg'
 
 const AppDiv = styled.div`
 background-image: url(${defaultImg});
