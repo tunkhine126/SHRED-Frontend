@@ -28,8 +28,10 @@ class usersCard extends Component {
               <Card.Img className="userimage" src={user.img_url} />
                 <Card.Body>
                   <Card.Header className="text-center">{user.username}</Card.Header>
+                  <Card.Text>Location: {user.location}</Card.Text>
                   <Card.Text>Followers: {user.followed_users.length}</Card.Text>
                   <Card.Text>Shreds: {user.trails.length}</Card.Text>
+                  <Card.Text>Bikes: {user.bikes.length}</Card.Text>
                   <button className="addbutton" onClick={() => this.follow(user)}>Follow {user.username}</button>
                 </Card.Body>
             </Card>
