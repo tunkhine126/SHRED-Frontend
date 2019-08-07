@@ -17,38 +17,37 @@ class userCard extends Component {
               <h4 className="userCard">{this.props.user.username}</h4>
             <Card.Body> 
               <Card.Text>
-              Location: {this.props.user.location}<br/>
-              Contact: {this.props.user.email}
+                Location: {this.props.user.location}<br/>
+                Contact: {this.props.user.email}
               </Card.Text>
                 <Popup trigger={<button className="button"> Edit Profile</button> } position="top right" style={{ width: '18rem' }} closeOnDocumentClick>
                   <EditUserForm/>
-                </Popup>
-                <br/><br/>
+                </Popup><br/><br/>
                   <Popup trigger={<button className="button"> Followers: {this.props.user.followed_users.length} </button> } 
                     position="bottom" 
                     style={{ width: '18rem' }} 
                     closeOnDocumentClick>
-                    <ListGroup >
-                      {this.props.user.followed_users.map(follower => <ListGroup.Item key={follower.id}>{follower.username}</ListGroup.Item>)}
-                    </ListGroup>
+                      <ListGroup >
+                        {this.props.user.followed_users.map(follower => <ListGroup.Item key={follower.id}>{follower.username}</ListGroup.Item>)}
+                      </ListGroup>
                   </Popup> {' '}
                   <Popup trigger={<button className="button"> Following: {this.props.user.follower_users.length} </button> } 
                     position="bottom" 
                     style={{ width: '18rem' }} 
                     closeOnDocumentClick>
-                    <ListGroup >
-                      {this.props.user.follower_users.map(follower => <ListGroup.Item key={follower.id}>{follower.username}</ListGroup.Item>)}
-                    </ListGroup>
+                      <ListGroup >
+                        {this.props.user.follower_users.map(follower => <ListGroup.Item key={follower.id}>{follower.username}</ListGroup.Item>)}
+                     </ListGroup>
                   </Popup> {''}
                   <Popup trigger={<button className="button"> Shreds: {this.props.user.trails.length} </button> } 
-                      position="left" 
-                      style={{ width: '18rem' }} 
-                      closeOnDocumentClick>
+                    position="left" 
+                    style={{ width: '18rem' }} 
+                    closeOnDocumentClick>
                       <ListGroup >
                         {this.props.user.trails.map(trail => <ListGroup.Item key={trail.id}>{trail.name}</ListGroup.Item>)}
                       </ListGroup>
-                    </Popup>
-            </Card.Body>
+                  </Popup>
+              </Card.Body>
         </Card>
       </div>
     )

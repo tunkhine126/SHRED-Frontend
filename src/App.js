@@ -41,9 +41,8 @@ class App extends Component{
                 </Switch>
             }
         </div>
-    );
+    )
   }
-
 }
 
 const mapStateToProps = state => ({
