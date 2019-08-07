@@ -6,7 +6,6 @@ import { Card, CardDeck } from 'react-bootstrap';
 
 class userBikeCard extends Component {
 
-  
   render() {
     return (
       <div>

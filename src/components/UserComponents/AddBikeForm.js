@@ -52,9 +52,7 @@ class AddBikeForm extends Component {
                   <Form.Control name="brakes" type="text" placeholder="Enter Brakes" />
                   <Form.Control name="tires" type="text" placeholder="Enter Tires" />
               </Form.Group>
-              <Button className="createButton" variant="primary" type="submit" >
-                Add Bike
-              </Button>
+              <Button className="createButton" variant="primary" type="submit" >Add Bike</Button>
             </Form>
           </Card.Body>
       </Card>
