@@ -1,68 +1,40 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## SHRED
+The premiere app for searching mountain biking trails near you, adding them to your profile and finding friends to ride with. 
 
-## Available Scripts
+## MOTIVATION
+SHRED is my Capstone Project for the Flatiron School that encapsulates the programming languages and skills I've learned through my software engineering journey. I wanted to build something that showcased my current level of knowledge paired with my love of biking, while pushing myself to refine my coding skills. 
 
-In the project directory, you can run:
+## INSTALL/GETTING STARTED
+SHRED's backend is hosted on Heroku and frontend hosted on Firebase.
 
-### `npm start`
+## BUILD STATUS
+While no project is ever complete and the list of features I'd like to add are extensive, SHRED exceeds the project requirements set out by my Project Managers. My initial project pitch can be found at 'https://docs.google.com/presentation/d/1WvBtd1Uui1Jyl4fkN7EZGjY-tTShI6gw4Plh1WV1mGY/edit?usp=sharing'
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+    Backend
+    - Validations
+    - Authentication
+    - has_many_ through relationships
+    - Custom controller/model methods
+    Frontend
+    - 1 Complex API
+    - Custom CSS + CSS Framework
+    - Redux
+    - Auth
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## FRAMEWORKS
+The backend is built using a Ruby on Rails framework while the frontend is built on a React-Redux framework.
 
-### `npm test`
+## FEATURES
+- Explore mountain biking trails near you or anywhere else in the world
+- Add trails to your profile
+- Check on local trail conditions and update them if you've ridden the trail
+- View other users of the application and follow them
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## HOW TO USE
+Create an account by choosing a username, password and email address. Use the navigation bar at the top to explore trails, check on conditions, and see other users of the app. 
 
-### `npm run build`
+## API REFERENCE
+The API used in this project is through https://www.mtbproject.com/
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## CREDITS
+Thanks to my Flatiron School cohort family, instructors, and most importantly my wife and daughter for their unwaivering support through the program and build of this final project. 
