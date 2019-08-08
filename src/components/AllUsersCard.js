@@ -6,7 +6,7 @@ class usersCard extends Component {
 
   follow = (user) => {
     let follow = {user_id: user.id, followed_user_id: this.props.user.id}
-      fetch('http://localhost:3000/followings', {
+    fetch('https://shred-app-backend.herokuapp.com/followings', {
         method: 'POST',
         headers: {'Content-Type': 'application/json', Accepts: 'application/json', Authorization: localStorage.token},
         body: JSON.stringify({

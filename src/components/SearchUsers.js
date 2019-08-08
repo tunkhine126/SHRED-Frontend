@@ -7,7 +7,7 @@ import { CardDeck } from 'react-bootstrap';
 class SearchUsers extends Component { 
 
     componentDidMount = () => {
-      fetch('http://localhost:3000/api/v1/users', {
+      fetch('https://shred-app-backend.herokuapp.com/api/v1/users', {
         method: 'GET',
         headers: {'Content-Type': 'application/json', Accepts: 'application/json'},
       })

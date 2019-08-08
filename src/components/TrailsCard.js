@@ -9,7 +9,7 @@ class trailsCard extends Component {
     addTrail = (trail) => {
       let post_trail = {...trail, api_index: trail.id, user_id: this.props.user.id}
         delete post_trail.id
-      fetch('http://localhost:3000/trails', {
+      fetch('https://shred-app-backend.herokuapp.com/trails', {
         method: 'POST',
         headers: {'Content-Type': 'application/json', Accepts: 'application/json', Authorization: localStorage.token},
         body: JSON.stringify({

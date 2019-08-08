@@ -14,7 +14,7 @@ class App extends Component{
 
     componentDidMount = () => {
       if(localStorage.token) {
-        fetch('http://localhost:3000/api/v1/profile', {
+        fetch('https://shred-app-backend.herokuapp.com/api/v1/profile', {
           headers: {Authorization: localStorage.token},
         })
         .then(res => res.json())

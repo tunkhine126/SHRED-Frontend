@@ -7,9 +7,7 @@ import Card from 'react-bootstrap/Card';
 class EditUserForm extends Component {
   
   handleEdit = (e) => {
-    e.preventDefault()
-
-      fetch(`http://localhost:3000/api/v1/users/${this.props.user_id}`, {
+    fetch(`https://shred-app-backend.herokuapp.com/api/v1/users/${this.props.user_id}`, {
         method: 'PATCH',
         headers: {'Content-Type': 'application/json', Accepts: 'application/json', Authorization: localStorage.token},
         body: JSON.stringify({user: {

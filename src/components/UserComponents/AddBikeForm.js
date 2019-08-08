@@ -8,7 +8,7 @@ class AddBikeForm extends Component {
   
   handleAddBike = (e) => {
     e.preventDefault()
-      fetch('http://localhost:3000/bikes', {
+    fetch('https://shred-app-backend.herokuapp.com/bikes', {
         method: 'POST',
         headers: {'Content-Type': 'application/json', Accepts: 'application/json',Authorization: localStorage.token},
         body: JSON.stringify({bike: {

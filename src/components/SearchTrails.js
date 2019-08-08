@@ -11,7 +11,7 @@ class Search extends Component {
     const maxResults = 100
     const decimalReplaceLat = lat.replace('.', '!')
     const decimalReplaceLon = lon.replace('.', '!')
-      fetch(`http://localhost:3000/trails&lat=${decimalReplaceLat}&lon=${decimalReplaceLon}&maxResults=${maxResults}`)
+      fetch(`https://shred-app-backend.herokuapp.com/trails&lat=${decimalReplaceLat}&lon=${decimalReplaceLon}&maxResults=${maxResults}`)
       .then(res => res.json())
       .then(res => this.props.dispatch({ type: "ALL_TRAILS", data: res }))
     }

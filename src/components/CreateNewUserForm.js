@@ -8,7 +8,7 @@ class Createform extends Component {
   handleCreate = (e) => {
     e.preventDefault()
       if(e.target.createusername.value && e.target.createpassword.value && e.target.createemail.value) {
-        fetch('http://localhost:3000/api/v1/users', {
+        fetch('https://shred-app-backend.herokuapp.com/api/v1/users', {
           method: 'POST',
           headers: {'Content-Type': 'application/json', Accepts: 'application/json','Access-Control-Allow-Origin':'*'},
           body: JSON.stringify({user: {
