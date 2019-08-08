@@ -47,7 +47,7 @@ code {
     display: block;
     max-width:400px;
     max-height:250px;
-    width: auto;
+    /* width: auto; */
     height: auto;
 }
 
