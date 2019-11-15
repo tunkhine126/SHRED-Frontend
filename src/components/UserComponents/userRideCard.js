@@ -9,7 +9,7 @@ class userRideCard extends Component {
       <div>
         <div style={{ width: '80rem'}} >
           <h2>Your Trails</h2>
-            <CardDeck class="row flex-row flex-nowrap">
+            <CardDeck className="row flex-row flex-nowrap">
               {this.props.user.currentUser.trails.map(trail => 
                 <Card key={trail.id} className="cardSpecs" bg="light" >
                   <Card.Img className="bikeimage" variant="top" src= {trail.imgSmallMed} />

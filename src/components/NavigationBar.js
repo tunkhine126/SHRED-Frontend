@@ -6,13 +6,24 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import FormControl from 'react-bootstrap/FormControl';
 import Image from '../images/ShredLogoPlain.png'
+import ReactLoading from 'react-loading'
+
+const url = "https://shred-app-backend.herokuapp.com/api/v1/login"
+const proxyurl = "https://cors-anywhere.herokuapp.com/"
 
 class Navigation extends Component {
+
+  state = {
+    isLoading: false
+  }
 
   handleLogin = (e) => {
     e.preventDefault()
       if(e.target.username.value && e.target.password.value) {
-        fetch('https://shred-app-backend.herokuapp.com/api/v1/login', {
+        this.setState({
+          isLoading: true
+        })
+        fetch(proxyurl + url, {
           method: 'POST',
           headers: {'Content-Type': 'application/json', Accepts: 'application/json','Access-Control-Allow-Origin':'*'},
           body: JSON.stringify({user: {
@@ -27,6 +38,9 @@ class Navigation extends Component {
             localStorage.setItem('token', res.jwt)
             localStorage.setItem('user_id', res.user.id)
             this.props.dispatch({type: "LOGIN_USER", user: res.user})
+            this.setState({
+              isLoading: false
+            })
           }
         })
         .then(e.target.reset())
@@ -34,6 +48,15 @@ class Navigation extends Component {
     }
 
   render() {
+    const loading = this.state.isLoading
+    
+    if (loading) {
+      return (
+      <div className="loader">
+          <ReactLoading type={"bars"} color={"grey"} /> Retrieving User 
+      </div>
+      )
+    }
     return(
       <div>
         <Navbar bg="dark" variant="dark">
